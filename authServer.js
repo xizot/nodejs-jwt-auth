@@ -11,7 +11,6 @@ app.use(cors());
 app.use(express.json());
 //routes
 app.use("/auth", require("./routes/auth"));
-app.use("/posts", require("./routes/posts"));
 
 db.sync()
     .then(() => {
