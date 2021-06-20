@@ -1,0 +1,33 @@
+POST http://localhost:5500/auth/register
+Content-Type: application/json
+
+{
+    "username":"xizot",
+    "password": "123",
+    "fullname":"Nhat Nguyen"
+}
+###
+POST http://localhost:5500/auth/login
+Content-Type: application/json
+
+{
+    "username":"",
+    "password": ""
+}
+
+###
+GET http://localhost:5500/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfX2lkIjoiMjY0NGM3MzgtZTQyYS00OGJiLWI3MWMtOWY2NDcyMGRkZGNkIiwiaWF0IjoxNjI0MTQwMDk5LCJleHAiOjE2MjQxNDAxMjl9.cvxfFtAhlPzHSdcFgU007wh-7oAqQkQjCTvKDZRUiag
+
+###
+GET http://localhost:5500/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfX2lkIjoiMjY0NGM3MzgtZTQyYS00OGJiLWI3MWMtOWY2NDcyMGRkZGNkIiwiaWF0IjoxNjI0MTQxMDI0LCJleHAiOjE2MjQxNDEwNTR9.3jXXyvDkJ1Mrca83ynIoHfX0HrS2tBVo8ILWipLWkFo
+
+
+###
+POST http://localhost:5500/auth/refreshToken
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfX2lkIjoiMjY0NGM3MzgtZTQyYS00OGJiLWI3MWMtOWY2NDcyMGRkZGNkIiwiaWF0IjoxNjI0MTQwOTQ1LCJleHAiOjE2MjY3MzI5NDV9.kFoRkh_X_vAVM7x7lr7JEdJRe6tstyE_FbUwyyohHoU"
+}
