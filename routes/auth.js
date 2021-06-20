@@ -77,7 +77,7 @@ router.post("/register", async (req, res) => {
         res.status(400).json({ error: "Something went wrong!" });
     }
 });
-router.post("/refreshToken", verifyRefreshToken, async (req, res) => {
+router.post("/refresh-token", verifyRefreshToken, async (req, res) => {
     const accessToken = jwt.sign(
         {
             __id: req.user.__id,
@@ -91,6 +91,9 @@ router.post("/refreshToken", verifyRefreshToken, async (req, res) => {
         accessToken,
         refreshToken,
     });
+});
+router.post("/verify-token", verifyAccessToken, async (req, res) => {
+    res.json({ message: "Token is valid" });
 });
 
 router.get("/logout", verifyAccessToken, async (req, res) => {
