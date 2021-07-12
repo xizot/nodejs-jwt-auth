@@ -6,8 +6,9 @@ const verifyAccessToken = (req, res, next) => {
     if (!bearerAccessToken) {
         res.status(401).send("Access Denied");
     }
-    const token = bearerAccessToken.split(" ")[1];
+    
     try {
+        const token = bearerAccessToken.split(" ")[1];
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
         console.log(decoded);
         req.user = decoded;
